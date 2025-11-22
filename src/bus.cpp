@@ -3,21 +3,13 @@
 
 Bus::Bus() {
   // TODO: Write initialization process in constructor
+  clear_memory();
 }
 
 Bus::~Bus() {}
 
-void Bus::write_memory(uint16_t addr, uint8_t data) {
-  if (addr >= 0 && addr <= MAX_ADDR_MEMORY) {
-    memory[addr] = data;
-  }
-}
+void Bus::write_memory(uint16_t addr, uint8_t data) { memory[addr] = data; }
 
-uint8_t Bus::read_memory(uint16_t addr) {
-  if (addr >= 0 && addr <= MAX_ADDR_MEMORY) {
-    return memory[addr];
-  }
+uint8_t Bus::read_memory(uint16_t addr) { return memory[addr]; }
 
-  // TODO: Make new type for better error handling
-  return 0x00;
-}
+void Bus::clear_memory() { memory.fill(0x00); }

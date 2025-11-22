@@ -20,4 +20,5 @@ public:
   uint8_t read_memory(uint16_t addr);
 
 private:
+  void clear_memory();
 };
