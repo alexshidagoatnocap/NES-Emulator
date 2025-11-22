@@ -2,6 +2,8 @@
 
 #include <cstdint>
 
+class Bus;
+
 class Cpu6502 {
 public:
   Cpu6502();
@@ -27,5 +29,9 @@ public:
     NEGATIVE = (1 << 6)
   } StatusFlags;
 
+  inline void connect_to_bus(Bus *bus) { busptr = bus; };
+  void reset();
+
 private:
+  Bus *busptr;
 };
