@@ -13,9 +13,6 @@ all: dirs $(TARGET)
 $(TARGET): $(OBJECTS)
 	$(CPP) $(CFLAGS) $(OBJECTS) -o $(TARGET)
 
-# $(OBJECTS): $(SOURCES)
-# 	$(CPP) $(CFLAGS) -c $^ -o $@
-
 $(BUILDDIR)/%.o: $(SRCDIR)/%.cpp
 	$(CPP) $(CFLAGS) -c $^ -o $@
 
