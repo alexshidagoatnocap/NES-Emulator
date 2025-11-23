@@ -71,7 +71,11 @@ private:
   uint8_t IN_STX(); uint8_t IN_STY(); uint8_t IN_TAX(); uint8_t IN_TAY(); 
   uint8_t IN_TSX(); uint8_t IN_TXA(); uint8_t IN_TXS(); uint8_t IN_TYA();
 
+  // Instruction handler for illegal opcodes
+  uint8_t IN_WTF(); // also known as the JAM, KIL, or HLT instruction
+
   // Addressing Modes
+  uint8_t MO_ACC();
 	uint8_t MO_ABS(); uint8_t MO_IDX();
 	uint8_t MO_ABX(); uint8_t MO_IDY();
 	uint8_t MO_ABY(); uint8_t MO_REL();
